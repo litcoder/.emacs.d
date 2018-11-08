@@ -3,8 +3,8 @@
 ;;; **************************************************************
 (setq url-proxy-services
       '(("no_proxy" . "^\\(localhost\\|10.*\\)")
-	("http" . "<http_proxy_server>:<port>")
-	("https" . "<https_proxy_server>:<port>")))
+	("http" . "proxy-chain.intel.com:911")
+	("https" . "proxy-chain.intel.com:912")))
 
 
 ;;; **************************************************************
