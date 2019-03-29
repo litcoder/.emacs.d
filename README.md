@@ -5,7 +5,4 @@ My personal emacs init file and configuration.
 M-x package-refresh-contents
 
 ## Install git
-M-x package-install
-Install package: git
-Install package: tramp
-Install package: package
+M-x package-install-selected-packages
