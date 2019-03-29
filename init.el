@@ -3,8 +3,8 @@
 ;;; **************************************************************
 (setq url-proxy-services
       '(("no_proxy" . "^\\(localhost\\|10.*\\)")
-	("http" . "proxy-chain.intel.com:911")
-	("https" . "proxy-chain.intel.com:912")))
+       ("http" . "<http_proxy_server>:<port>")
+       ("https" . "<https_proxy_server>:<port>")))
 
 
 ;;; **************************************************************
@@ -28,8 +28,7 @@
 ;;;    “java”: The default style for java-mode (see below)
 ;;;    “user”: When you want to define your own style 
 ;;; **************************************************************
-(setq c-default-style "linux"
-      c-basic-offset 4)
+(setq c-default-style "linux")
 
 
 ;;; **************************************************************
@@ -62,8 +61,10 @@
 ;;; **************************************************************
 ;;; Indentation (No tab mode)
 ;;; **************************************************************
-(setq-default indent-tabs-mode nil)
-(setq tab-width 4)
+;(setq-default indent-tabs-mode nil)
+(setq-default c-basic-offset 4
+              tab-width 4
+              indent-tabs-mode t)
 
 
 ;;; **************************************************************
