@@ -1,10 +1,10 @@
 ;;; **************************************************************
 ;;; PROXY settings. - When you're behind a firewall.
 ;;; **************************************************************
-(setq url-proxy-services
-      '(("no_proxy" . "^\\(localhost\\|10.*\\)")
-       ("http" . "<http_proxy_server>:<port>")
-       ("https" . "<https_proxy_server>:<port>")))
+;;; (setq url-proxy-services
+;;;      '(("no_proxy" . "^\\(localhost\\|10.*\\)")
+;;;       ("http" . "<http_proxy_server>:<port>")
+;;;       ("https" . "<https_proxy_server>:<port>")))
 
 
 ;;; **************************************************************
