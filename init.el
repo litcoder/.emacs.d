@@ -70,8 +70,8 @@
 ;;; **************************************************************
 ;;; Splitted window resizing.
 ;;; **************************************************************
-(global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
-(global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
+(global-set-key (kbd "S-M-<left>") 'shrink-window-horizontally)
+(global-set-key (kbd "S-M-<right>") 'enlarge-window-horizontally)
 (global-set-key (kbd "S-M-<down>") 'shrink-window)
 (global-set-key (kbd "S-M-<up>") 'enlarge-window)
 
@@ -159,7 +159,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (go-mode tramp-theme gited))))
+ '(package-selected-packages (quote (git go-mode tramp-theme gited))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
