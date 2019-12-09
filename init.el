@@ -168,8 +168,14 @@
  )
 
 ;;; **************************************************************
+;;; Font - Courier
+;;; **************************************************************
+(set-frame-font "Courier 12" nil t)
+
+;;; **************************************************************
 ;;; Spelling checker. e.g) M-x flyspell-mode
 ;;; You may need to install spelling checker in your system
 ;;; before describe path to it.
 ;;; **************************************************************
 (setq ispell-program-name "/usr/local/bin/ispell")
+
