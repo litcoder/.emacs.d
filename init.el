@@ -177,5 +177,5 @@
 ;;; You may need to install spelling checker in your system
 ;;; before describe path to it.
 ;;; **************************************************************
-(setq ispell-program-name "/usr/local/bin/ispell")
+(setq ispell-program-name "/usr/local/bin/aspell")
 
