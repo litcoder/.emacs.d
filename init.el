@@ -166,3 +166,10 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;;; **************************************************************
+;;; Spelling checker. e.g) M-x flyspell-mode
+;;; You may need to install spelling checker in your system
+;;; before describe path to it.
+;;; **************************************************************
+(setq ispell-program-name "/usr/local/bin/ispell")
