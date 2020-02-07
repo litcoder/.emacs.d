@@ -1,5 +1,5 @@
 # .emacs.d
-My personal emacs init file and configuration.
+My personal emacs init file and configurations.
 
 ## Refresh package contents (ELPA, MELPA)
 M-x package-refresh-contents
