@@ -6,10 +6,10 @@
 ;;; **************************************************************
 ;;; PROXY settings. - When you're behind a firewall.
 ;;; **************************************************************
-(setq url-proxy-services
-      '(("no_proxy" . "^\\(localhost\\|10.*\\)")
-	("http" . "proxy-png.intel.com:911")
-	("https" . "proxy-png.intel.com:912")))
+;(setq url-proxy-services
+;      '(("no_proxy" . "^\\(localhost\\|10.*\\)")
+;	("http" . "<SERVER>:<PORT>")
+;	("https" . "<SERVER>:<PORT>")))
 
 
 ;;; **************************************************************
