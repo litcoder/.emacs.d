@@ -46,9 +46,7 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 (require 'package)
-(add-to-list
- 'package-archives
- '("melpa" . "https://melpa.org/packages/")t)
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 
 
 ;;; **************************************************************
