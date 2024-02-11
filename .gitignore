@@ -2,6 +2,7 @@ auto-save-list/*
 transient/*
 url/*
 elpa/*
+eln-cache/*
 recentf
 tramp
 network-security.data

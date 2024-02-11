@@ -3,9 +3,9 @@
 ;;; **************************************************************
 (setenv "LC_CTYPE" "UTF-8")
 (setenv "PATH"
-	(concat
-	 "/usr/local/bin" ":"
-	 (getenv "PATH")))
+        (concat
+         "/usr/local/bin" ":"
+         (getenv "PATH")))
 
 
 ;;; **************************************************************
@@ -22,8 +22,6 @@
 ;;; **************************************************************
 (require 'package)
 (add-to-list 'package-archives
-             '("elpy" . "http://jorgenschaefer.github.io/packages/"))
-(add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives
              '("melpa-stable" . "http://melpa-stable.milkbox.net/packages/") t)
@@ -31,14 +29,13 @@
 ;;install packages
 (setq package-list
       '(
-	pyvenv
-	tramp
+        pyvenv
+        tramp
         highlight-indentation
-	find-file-in-project
+        find-file-in-project
         exec-path-from-shell
         auto-complete
-	git
-	magit))
+        magit))
 
 ;; activate
 (package-initialize)
@@ -63,7 +60,7 @@
 ;;; **************************************************************
 ;;; Set line number mode on.
 ;;; **************************************************************
-(global-linum-mode t)
+(global-display-line-numbers-mode 1)
 
 
 ;;; **************************************************************
@@ -97,7 +94,6 @@
 (global-set-key "\C-x\ \C-r" 'recentf-open-files)
 
 
-
 ;;; **************************************************************
 ;;; Set column-number-mode by default.
 ;;; **************************************************************
@@ -109,42 +105,6 @@
 ;;; **************************************************************
 (require 'tramp)
 (setq tramp-default-method "ssh")
-
-
-
-;;; **************************************************************
-;;; Git
-;;; **************************************************************
-(require 'git)
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-enabled-themes '(misterioso))
- '(package-selected-packages '(## plantuml-mode git go-mode tramp-theme gited)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-;; Bind magit status
-(global-set-key (kbd "C-x g") 'magit-status)
-
-
-
-;;; **************************************************************
-;;; Elpy
-;;; **************************************************************
-(elpy-enable)
-;; CPython
-(setq python-shell-interpreter "python"
-      python-shell-interpreter-args "-i")
-;; IPython
-(setq python-shell-interpreter "ipython"
-        python-shell-interpreter-args "--simple-prompt -i")
 
 
 ;;; **************************************************************
