@@ -1,6 +1,9 @@
 auto-save-list/*
+transient/*
+url/*
+elpa/*
 recentf
 tramp
-elpa/*
+network-security.data
 *~
 \#*
