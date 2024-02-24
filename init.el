@@ -121,6 +121,13 @@
 
 
 ;;; **************************************************************
+;;; Clang
+;;; **************************************************************
+(require 'clang-format)
+(setq clang-format-style "file")
+
+
+;;; **************************************************************
 ;;; Spelling checker. e.g) M-x flyspell-mode
 ;;; You may need to install spelling checker in your system
 ;;; before describe path to it.
@@ -138,7 +145,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(## py-autopep8 magit exec-path-from-shell elpy auto-complete)))
+   '(clang-format ## py-autopep8 magit exec-path-from-shell elpy auto-complete)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
