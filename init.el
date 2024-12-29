@@ -28,21 +28,19 @@
 ;;install packages
 (setq package-list
       '(
+	use-package
         pyvenv
-		py-autopep8
+        py-autopep8
         tramp
         highlight-indentation
         find-file-in-project
         exec-path-from-shell
         auto-complete
-        magit))
+        magit
+	lsp-mode
+	lsp-ui
+        rust-mode))
 
-;; activate
-(package-initialize)
-
-;; fetch the list of packages available 
-(unless package-archive-contents
-  (package-refresh-contents))
 
 ;; install the missing packages
 (setq package-install-upgrade-built-in t)
@@ -61,14 +59,6 @@
 ;;; Set line number mode on.
 ;;; **************************************************************
 (global-display-line-numbers-mode 1)
-
-
-;;; **************************************************************
-;;; Indentation (No tab mode)
-;;; **************************************************************
-(setq-default c-basic-offset 4
-              tab-width 4
-              indent-tabs-mode t)
 
 
 ;;; **************************************************************
@@ -126,6 +116,38 @@
 (require 'clang-format)
 (setq clang-format-style "file")
 
+;;; **************************************************************
+;;; rust
+;;; **************************************************************
+(require 'rust-mode)
+(add-hook 'rust-mode-hook #'lsp-deferred)
+(add-hook 'rust-mode-hook
+          (lambda () (setq indent-tabs-mode nil)))
+
+;;; **************************************************************
+;;; LSP settings
+;;; **************************************************************
+(use-package lsp-mode
+	 :commands (lsp lsp-defferred)
+	 :init
+	 (setq lsp-keymap-prefix "C-c l"))
+(with-eval-after-load 'lsp-mode
+  (add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration))
+(setq lsp-enable-symbol-highlighting nil)
+(setq lsp-ui-doc-enable nil)
+(setq lsp-lens-enable nil)
+(setq lsp-headerline-breadcrumb-enable nil)
+(setq lsp-ui-sideline-enable nil)
+(setq lsp-modeline-code-actions-enable nil)
+(setq lsp-diagnostics-provider :none)
+(setq lsp-modeline-diagnostics-enable nil)
+(setq lsp-signature-auto-activate t)
+(setq lsp-signature-render-documentation nil)
+(setq lsp-completion-provider :none)
+(setq lsp-completion-show-detail nil)
+(setq lsp-completion-show-kind nil)
+
+
 
 ;;; **************************************************************
 ;;; Spelling checker. e.g) M-x flyspell-mode
@@ -134,18 +156,13 @@
 ;;; **************************************************************
 (setq ispell-program-name "/usr/local/bin/aspell")
 
-
-
-;;; **************************************************************
-;;; Custom - Auto added
-;;; **************************************************************
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(python-black clang-format ## py-autopep8 magit exec-path-from-shell elpy auto-complete)))
+   '(lsp-ui rust-mode python-black py-autopep8 magit lsp-mode find-file-in-project exec-path-from-shell elpy clang-format auto-complete)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
