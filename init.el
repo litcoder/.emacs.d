@@ -148,7 +148,6 @@
 (setq lsp-completion-show-kind nil)
 
 
-
 ;;; **************************************************************
 ;;; Spelling checker. e.g) M-x flyspell-mode
 ;;; You may need to install spelling checker in your system
@@ -162,7 +161,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(lsp-ui rust-mode python-black py-autopep8 magit lsp-mode find-file-in-project exec-path-from-shell elpy clang-format auto-complete)))
+   '(use-package lsp-ui rust-mode python-black py-autopep8 magit lsp-mode find-file-in-project exec-path-from-shell elpy clang-format auto-complete)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
