@@ -8,3 +8,6 @@ tramp
 network-security.data
 *~
 \#*
+.cache/
+.lsp-session-v1
+session.*
