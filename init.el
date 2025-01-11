@@ -28,7 +28,7 @@
 ;;install packages
 (setq package-list
       '(
-	use-package
+        use-package
         pyvenv
         py-autopep8
         tramp
@@ -37,15 +37,20 @@
         exec-path-from-shell
         auto-complete
         magit
-	lsp-mode
-	lsp-ui
-        rust-mode))
+        lsp-mode
+        lsp-ui
+        rust-mode
+        s
+        dash
+        editorconfig
+        company))
 
 
 ;; install the missing packages
 (setq package-install-upgrade-built-in t)
 (dolist (package package-list)
   (unless (package-installed-p package)
+    (package-refresh-contents)
     (package-install package)))
 
 
@@ -146,6 +151,16 @@
 (setq lsp-completion-provider :none)
 (setq lsp-completion-show-detail nil)
 (setq lsp-completion-show-kind nil)
+
+
+;;; **************************************************************
+;;; copilot
+;;; **************************************************************
+(use-package copilot
+  :load-path (lambda () (expand-file-name "copilot.el" user-emacs-directory))
+  ;; don't show in mode line
+  :diminish)
+
 
 
 ;;; **************************************************************
