@@ -141,19 +141,19 @@
 	 (setq lsp-keymap-prefix "C-c l"))
 (with-eval-after-load 'lsp-mode
   (add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration))
-(setq lsp-enable-symbol-highlighting nil)
-(setq lsp-ui-doc-enable nil)
-(setq lsp-lens-enable nil)
-(setq lsp-headerline-breadcrumb-enable nil)
-(setq lsp-ui-sideline-enable nil)
-(setq lsp-modeline-code-actions-enable nil)
+(setq lsp-enable-symbol-highlighting t)
+(setq lsp-ui-doc-enable t)
+(setq lsp-lens-enable t)
+(setq lsp-headerline-breadcrumb-enable t)
+(setq lsp-ui-sideline-enable t)
+(setq lsp-modeline-code-actions-enable t)
 (setq lsp-diagnostics-provider :none)
-(setq lsp-modeline-diagnostics-enable nil)
+(setq lsp-modeline-diagnostics-enable t)
 (setq lsp-signature-auto-activate t)
-(setq lsp-signature-render-documentation nil)
+(setq lsp-signature-render-documentation t)
 (setq lsp-completion-provider :none)
-(setq lsp-completion-show-detail nil)
-(setq lsp-completion-show-kind nil)
+(setq lsp-completion-show-detail t)
+(setq lsp-completion-show-kind t)
 
 
 ;;; **************************************************************
@@ -163,6 +163,9 @@
   :load-path (lambda () (expand-file-name "copilot.el" user-emacs-directory))
   ;; don't show in mode line
   :diminish)
+(add-hook 'prog-mode-hook 'copilot-mode)
+(define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
+(define-key copilot-completion-map (kbd "TAB") 'copilot-accept-completion)
 
 
 ;;; **************************************************************
