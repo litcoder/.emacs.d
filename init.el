@@ -40,9 +40,8 @@
         lsp-mode
         lsp-ui
         rust-mode
+        log4j-mode
         inkpot-theme
-	log4j-mode
-	inkpot-theme
         s
         dash
         editorconfig
@@ -219,7 +218,10 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(viewer log4j-mode use-package rust-mode python-black py-autopep8 magit lsp-ui kkp jsonrpc inkpot-theme find-file-in-project exec-path-from-shell elpy editorconfig clang-format auto-complete)))
+   '(auto-complete clang-format editorconfig elpy exec-path-from-shell
+		   find-file-in-project inkpot-theme jsonrpc kkp
+		   log4j-mode lsp-ui magit plantuml-mode py-autopep8
+		   python-black rust-mode use-package viewer)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
