@@ -36,7 +36,6 @@
         find-file-in-project
         exec-path-from-shell
         auto-complete
-        magit
         lsp-mode
         lsp-ui
         rust-mode
@@ -220,7 +219,7 @@
  '(package-selected-packages
    '(auto-complete clang-format editorconfig elpy exec-path-from-shell
 		   find-file-in-project inkpot-theme jsonrpc kkp
-		   log4j-mode lsp-ui magit plantuml-mode py-autopep8
+		   log4j-mode lsp-ui plantuml-mode py-autopep8
 		   python-black rust-mode use-package viewer)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
