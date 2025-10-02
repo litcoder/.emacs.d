@@ -28,7 +28,6 @@
 ;;install packages
 (setq package-list
       '(
-        use-package
         pyvenv
         py-autopep8
         tramp
@@ -204,7 +203,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(auto-complete clang-format editorconfig elpy exec-path-from-shell
+   '(auto-complete clang-format copilot editorconfig elpy exec-path-from-shell
 		   find-file-in-project inkpot-theme jsonrpc kkp
 		   log4j-mode lsp-ui plantuml-mode py-autopep8
 		   python-black rust-mode use-package viewer)))
