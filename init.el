@@ -39,6 +39,7 @@
         lsp-ui
         rust-mode
         log4j-mode
+	treemacs
         inkpot-theme
         s
         dash
@@ -185,6 +186,23 @@
 
 
 ;;; **************************************************************
+;;; Treemacs
+;;; **************************************************************
+(use-package treemacs
+  :demand t
+  :config
+    (setq treemacs-follow-after-init t
+          treemacs-is-never-other-window t)
+  (treemacs-follow-mode t)
+  (treemacs-filewatch-mode t)
+  (treemacs-git-mode 'simple)
+  (treemacs-fringe-indicator-mode t))
+(global-set-key (kbd "C-M-f") 'treemacs-find-file)
+(global-set-key (kbd "C-M-0") 'treemacs-select-window)
+
+
+
+;;; **************************************************************
 ;;; Theme
 ;;; **************************************************************
 (load-theme 'inkpot t)
@@ -203,10 +221,11 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(auto-complete clang-format copilot editorconfig elpy exec-path-from-shell
-		   find-file-in-project inkpot-theme jsonrpc kkp
-		   log4j-mode lsp-ui plantuml-mode py-autopep8
-		   python-black rust-mode use-package viewer)))
+   '(auto-complete clang-format copilot editorconfig elpy
+		   exec-path-from-shell find-file-in-project
+		   inkpot-theme jsonrpc kkp log4j-mode lsp-ui
+		   plantuml-mode py-autopep8 python-black rust-mode
+		   treemacs use-package viewer)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
