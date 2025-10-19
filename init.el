@@ -62,9 +62,12 @@
 
 
 ;;; **************************************************************
-;;; Set line number mode on.
+;;; Set modes.
+;;; - line numbers
+;;; - company mode
 ;;; **************************************************************
 (global-display-line-numbers-mode 1)
+(add-hook 'after-init-hook 'global-company-mode)
 
 
 ;;; **************************************************************
