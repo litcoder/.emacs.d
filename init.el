@@ -29,7 +29,7 @@
 (setq package-list
       '(
         pyvenv
-        py-autopep8
+        blacken
         tramp
         highlight-indentation
         find-file-in-project
@@ -203,6 +203,18 @@
 
 
 ;;; **************************************************************
+;;; Python formatter
+;;; **************************************************************
+(use-package blacken
+  :ensure t
+  :after python
+  :commands (blacken-buffer)
+  :config
+  (setq blacken-line-length 88))
+(global-set-key (kbd "C-c b") #'blacken-buffer)
+
+
+;;; **************************************************************
 ;;; Theme
 ;;; **************************************************************
 (load-theme 'inkpot t)
@@ -221,7 +233,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(auto-complete clang-format copilot editorconfig elpy
+   '(auto-complete blacken clang-format copilot editorconfig elpy
 		   exec-path-from-shell find-file-in-project
 		   inkpot-theme jsonrpc kkp log4j-mode lsp-ui
 		   plantuml-mode py-autopep8 python-black rust-mode
