@@ -30,6 +30,17 @@ M-x package-refresh-contents
 M-x package-install-selected-packages
 ```
 
+## Install packages
+```
+M-x package-install
+```
+
+Type package names.
+```
+clang-format
+copilot
+```
+
 ## Copilot
 ```
 M-x copilot-install-server
