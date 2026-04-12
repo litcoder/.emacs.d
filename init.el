@@ -117,10 +117,17 @@
 ;;; **************************************************************
 ;;; rust
 ;;; **************************************************************
-(require 'rust-mode)
-(add-hook 'rust-mode-hook #'lsp-deferred)
-(add-hook 'rust-mode-hook
-          (lambda () (setq indent-tabs-mode nil)))
+(use-package rustic
+  :ensure t
+  :bind (:map rustic-mode-map
+              ("M-?" . lsp-find-references)
+              ("C-c C-c C-c" . rustic-cargo-build)
+              ("C-c C-c C-k" . rustic-cargo-check)
+              ("C-c C-c C-t" . rustic-cargo-test)
+              ("C-c C-c C-f" . rustic-format-buffer))
+  :config
+  (setq rustic-format-on-save nil)
+  (setq rustic-lsp-client 'lsp-mode))
 
 ;;; **************************************************************
 ;;; LSP settings
