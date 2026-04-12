@@ -37,6 +37,7 @@ M-x package-install
 
 Type package names.
 ```
+tramp
 clang-format
 copilot
 ```

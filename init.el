@@ -104,7 +104,9 @@
 ;;; **************************************************************
 (require 'tramp)
 (setq tramp-default-method "ssh")
-
+;; Respect remote path.
+(with-eval-after-load 'tramp
+  (add-to-list 'tramp-remote-path 'tramp-own-remote-path))
 
 ;;; **************************************************************
 ;;; Clang
@@ -240,7 +242,7 @@
 		   exec-path-from-shell find-file-in-project
 		   inkpot-theme jsonrpc kkp log4j-mode lsp-ui
 		   plantuml-mode py-autopep8 python-black rust-mode
-		   treemacs use-package viewer)))
+		   tramp treemacs use-package viewer)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
