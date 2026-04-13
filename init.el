@@ -133,24 +133,33 @@
 ;;; LSP settings
 ;;; **************************************************************
 (use-package lsp-mode
-	 :commands (lsp lsp-defferred)
-	 :init
-	 (setq lsp-keymap-prefix "C-c l"))
-(with-eval-after-load 'lsp-mode
-  (add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration))
-(setq lsp-enable-symbol-highlighting t)
-(setq lsp-ui-doc-enable t)
-(setq lsp-lens-enable t)
-(setq lsp-headerline-breadcrumb-enable t)
-(setq lsp-ui-sideline-enable t)
-(setq lsp-modeline-code-actions-enable t)
-(setq lsp-diagnostics-provider :none)
-(setq lsp-modeline-diagnostics-enable t)
-(setq lsp-signature-auto-activate t)
-(setq lsp-signature-render-documentation t)
-(setq lsp-completion-provider :none)
-(setq lsp-completion-show-detail t)
-(setq lsp-completion-show-kind t)
+  :commands (lsp lsp-deferred)
+  :init
+  (setq lsp-keymap-prefix "C-c l")
+  :hook ((rust-mode . lsp-deferred)
+         (lsp-mode . lsp-enable-which-key-integration))
+  :config
+  (setq lsp-enable-symbol-highlighting t
+        lsp-ui-doc-enable t
+        lsp-lens-enable t
+        lsp-headerline-breadcrumb-enable t
+        lsp-ui-sideline-enable t
+        lsp-modeline-code-actions-enable t
+        lsp-modeline-diagnostics-enable t
+        lsp-signature-auto-activate t
+        lsp-signature-render-documentation t
+        lsp-completion-show-detail t
+        lsp-completion-show-kind t)
+  (setq lsp-rust-analyzer-display-combine-imports t
+        lsp-rust-analyzer-display-chaining-hints t   ; 메서드 체이닝 시 타입 표시
+        lsp-rust-analyzer-display-parameter-hints t  ; 매개변수 이름 표시
+        lsp-rust-analyzer-proc-macro-enable t))      ; 매크로 지원 강화
+
+(use-package lsp-ui
+  :commands lsp-ui-mode
+  :config
+  (setq lsp-ui-doc-position 'at-point))
+
 
 
 ;;; **************************************************************
