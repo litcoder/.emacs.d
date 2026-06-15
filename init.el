@@ -261,3 +261,11 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+
+;;; **************************************************************
+;;; Resolve git rebase read-only problem.
+;;; **************************************************************
+(add-hook 'git-rebase-mode-hook
+  (lambda ()
+    (read-only-mode -1)))
