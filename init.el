@@ -23,6 +23,7 @@
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/") t)
+(package-initialize)
 
 
 ;;install packages
@@ -111,8 +112,8 @@
 ;;; **************************************************************
 ;;; Clang
 ;;; **************************************************************
-(require 'clang-format)
-(setq clang-format-style "file")
+;; (require 'clang-format)
+;; (setq clang-format-style "file")
 
 ;;; **************************************************************
 ;;; rust
@@ -175,38 +176,6 @@
 
 
 ;;; **************************************************************
-;;; Log4j
-;;; **************************************************************
-(use-package log4j-mode
-  :ensure t
-  :disabled t
-  :init
-  (add-hook #'log4j-mode-hook #'view-mode)
-  (add-hook #'log4j-mode-hook #'read-only-mode)
-  (add-hook #'log4j-mode-hook 'eos/turn-on-hl-line))
-(use-package view
-  :config
-  (defun View-goto-line-last (&optional line)
-    "goto last line"
-    (interactive "P")
-    (goto-line (line-number-at-pos (point-max))))
-
-  (define-key view-mode-map (kbd "e") 'View-scroll-half-page-forward)
-  (define-key view-mode-map (kbd "u") 'View-scroll-half-page-backward)
-
-  ;; less like
-  (define-key view-mode-map (kbd "N") 'View-search-last-regexp-backward)
-  (define-key view-mode-map (kbd "?") 'View-search-regexp-backward?)
-  (define-key view-mode-map (kbd "g") 'View-goto-line)
-  (define-key view-mode-map (kbd "G") 'View-goto-line-last)
-  ;; vi/w3m like
-  (define-key view-mode-map (kbd "h") 'backward-char)
-  (define-key view-mode-map (kbd "j") 'next-line)
-  (define-key view-mode-map (kbd "k") 'previous-line)
-  (define-key view-mode-map (kbd "l") 'forward-char))
-
-
-;;; **************************************************************
 ;;; Treemacs
 ;;; **************************************************************
 (use-package treemacs
@@ -233,13 +202,6 @@
   :config
   (setq blacken-line-length 88))
 (global-set-key (kbd "C-c b") #'blacken-buffer)
-
-
-;;; **************************************************************
-;;; Theme
-;;; **************************************************************
-;;(load-theme 'inkpot t)
-
 
 
 ;;; **************************************************************
