@@ -165,13 +165,13 @@
 ;;; **************************************************************
 ;;; copilot
 ;;; **************************************************************
-(use-package copilot
-  :load-path (lambda () (expand-file-name "copilot.el" user-emacs-directory))
-  ;; don't show in mode line
-  :diminish)
-(add-hook 'prog-mode-hook 'copilot-mode)
-(define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
-(define-key copilot-completion-map (kbd "TAB") 'copilot-accept-completion)
+;; (use-package copilot
+;;   :load-path (lambda () (expand-file-name "copilot.el" user-emacs-directory))
+;;   ;; don't show in mode line
+;;   :diminish)
+;; (add-hook 'prog-mode-hook 'copilot-mode)
+;; (define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
+;; (define-key copilot-completion-map (kbd "TAB") 'copilot-accept-completion)
 
 
 ;;; **************************************************************
