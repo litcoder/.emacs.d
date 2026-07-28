@@ -176,6 +176,39 @@
 
 
 ;;; **************************************************************
+;;; Claude
+;;; **************************************************************
+;; install required inheritenv dependency:
+(use-package inheritenv
+  :vc (:url "https://github.com/purcell/inheritenv" :rev :newest))
+
+;; for eat terminal backend:
+(use-package eat :ensure t)
+
+;; for vterm terminal backend:
+(use-package vterm :ensure t)
+
+;; for ghostel terminal backend (libghostty):
+(use-package ghostel
+  :vc (:url "https://github.com/dakra/ghostel" :rev :newest))
+
+;; install claude-code.el
+(use-package clgaude-code :ensure t
+  :vc (:url "https://github.com/stevemolitor/claude-code.el" :rev :newest)
+  :config
+  ;; optional IDpackE integration with Monet
+  (add-hook 'claude-code-process-environment-functions #'monet-start-server-function)
+  (monet-mode 1)
+
+  (claude-code-mode)
+  :bind-keymap ("C-c c" . claude-code-command-map)
+
+  ;; Optionally define a repeat map so that "M" will cycle thru Claude auto-accept/plan/confirm modes after invoking claude-code-cycle-mode / C-c M.
+  :bind
+  (:repeat-map my-claude-code-map ("M" . claude-code-cycle-mode)))
+
+
+;;; **************************************************************
 ;;; Treemacs
 ;;; **************************************************************
 (use-package treemacs
@@ -215,8 +248,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   '(auto-complete blacken clang-format copilot editorconfig elpy exec-path-from-shell find-file-in-project inkpot-theme jsonrpc kkp log4j-mode lsp-ui plantuml-mode py-autopep8 python-black rust-mode tramp treemacs use-package viewer)))
+ '(package-selected-packages nil)
+ '(package-vc-selected-packages
+   '((claude-code :url "https://github.com/stevemolitor/claude-code.el"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

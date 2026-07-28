@@ -13,3 +13,5 @@ network-security.data
 session.*
 org-persist/*
 request/*
+projects
+*Install vterm*
